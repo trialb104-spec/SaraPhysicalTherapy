@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مركز الأمل للعلاج الطبيعي</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles to enhance the look and feel, and ensure Arabic font support */
         body {
             font-family: 'Cairo', sans-serif;
             background-color: #f8f9fa;
         }
-        /* Removed .hero-section background image and height as it's now a dedicated image */
         .section-title::after {
             content: '';
             display: block;
             width: 80px;
             height: 4px;
-            background-color: #008080; /* Teal/Turquoise */
+            background-color: #008080;
             margin: 10px auto 0;
             border-radius: 2px;
         }
-        /* Custom scrollbar for aesthetics */
         body::-webkit-scrollbar {
             width: 8px;
         }
@@ -37,7 +33,6 @@
         body::-webkit-scrollbar-thumb:hover {
             background: #006666;
         }
-        /* Keyframe for pulse effect on button */
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 153, 0, 0); }
@@ -46,9 +41,8 @@
             animation: pulse 2s infinite;
         }
 
-        /* FAQ Toggle Styling */
         .faq-item input:checked ~ .faq-content {
-            max-height: 500px; /* Large enough to show content */
+            max-height: 500px;
             padding-top: 15px;
         }
         .faq-content {
@@ -57,51 +51,57 @@
             transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
             padding-top: 0;
         }
+        .review-img-container {
+            position: relative;
+            padding-top: 100%;
+        }
+        .review-img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- 1. Navigation Bar (Sticky and Creative) -->
     <header class="sticky top-0 z-50 bg-white shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <a href="#home" class="flex items-center space-x-2 space-x-reverse">
                     <img src="https://i.ibb.co/fdvFMqd6/Logo.png" alt="Logo" class="h-10 w-auto">
                     <span class="text-xl font-extrabold text-[#008080] hidden sm:block">مركز الأمل للعلاج الطبيعي</span>
                 </a>
                 
-                <!-- Desktop Navigation Links -->
                 <div class="hidden md:flex space-x-8 space-x-reverse">
                     <a href="#home" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">الرئيسية</a>
                     <a href="#about" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">عن المركز</a>
                     <a href="#services" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">خدماتنا</a>
                     <a href="#gallery" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">نصائح وإرشادات</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">تجارب المرضى</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">آراء العملاء</a>
                     <a href="#faq" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">أسئلة شائعة</a>
                     <a href="#contact" class="text-gray-600 hover:text-[#008080] transition duration-300 font-semibold">تواصل معنا</a>
                 </div>
 
-                <!-- Contact Button -->
                 <a href="tel:01221278312" class="bg-[#008080] text-white px-4 py-2 rounded-full hover:bg-[#006666] transition duration-300 font-bold shadow-md hidden md:block">
                     اتصل بنا
                 </a>
 
-                <!-- Mobile Menu Button (Hamburger) -->
                 <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-[#008080] focus:outline-none p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </nav>
 
-        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg transition-all duration-300">
             <div class="pt-2 pb-3 space-y-1 flex flex-col items-center">
                 <a href="#home" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">الرئيسية</a>
                 <a href="#about" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">عن المركز</a>
                 <a href="#services" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">خدماتنا</a>
                 <a href="#gallery" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">نصائح وإرشادات</a>
-                <a href="#testimonials" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">تجارب المرضى</a>
+                <a href="#testimonials" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">آراء العملاء</a>
                 <a href="#faq" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">أسئلة شائعة</a>
                 <a href="#contact" class="block w-full text-center px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">تواصل معنا</a>
                 <a href="tel:01221278312" class="block w-3/4 text-center px-3 py-2 mt-2 bg-[#008080] text-white rounded-full hover:bg-[#006666] font-bold">اتصل بنا</a>
@@ -110,23 +110,19 @@
     </header>
 
     <main>
-        <!-- 2. Creative Main Advertisement / Hero Section -->
         <section id="home" class="py-16 md:py-24 bg-[#e6f2f2] dark:bg-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Image Side (Right side on RTL layout) -->
                     <div class="order-2 lg:order-1 relative p-4 lg:p-0">
                         <img 
-                            src="https://i.ibb.co/ksB33Qxz/DR-Sara-Basalios-Physical-Therapy-1.jpg" 
+                            src="https://i.ibb.co/LdGYBr9q/DR-Sara-Basalios-Physical-Therapy-2.jpg" 
                             alt="إعلان مركز الأمل للعلاج الطبيعي" 
                             class="w-full h-auto object-cover rounded-3xl shadow-2xl transform hover:scale-[1.02] transition duration-500 ease-in-out border-4 border-white"
                         >
-                        <!-- Creative Overlay Corner Elements -->
                         <div class="absolute -top-4 -right-4 w-20 h-20 bg-[#008080] rounded-tl-3xl hidden lg:block opacity-70"></div>
                         <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-[#008080] rounded-br-3xl hidden lg:block opacity-70"></div>
                     </div>
                     
-                    <!-- Text Side (Left side on RTL layout) -->
                     <div class="order-1 lg:order-2 text-center lg:text-right">
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-tight text-[#008080] border-b-4 border-teal-300 pb-2 inline-block">
                             نخطو معك نحو الشفاء
@@ -143,25 +139,22 @@
             </div>
         </section>
 
-        <!-- 3. About Dr. Sara Basalious -->
         <section id="about" class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="section-title text-3xl font-extrabold text-center mb-12">من نحن؟</h2>
                 <div class="flex flex-col lg:flex-row items-center lg:space-x-12 lg:space-x-reverse">
                     
-                    <!-- Dr. Sara Info -->
                     <div class="lg:w-2/3 text-center lg:text-right mb-8 lg:mb-0">
                         <h3 class="text-4xl font-bold text-[#008080] mb-4">د. سارة باسيليوس</h3>
                         <p class="text-xl text-gray-600 mb-6">أخصائية العلاج الطبيعي ومديرة المركز</p>
                         <p class="text-lg leading-relaxed mb-4">
-                            تكرس د. سارة باسيليوس خبرتها الطويلة لتقديم أعلى مستويات الرعاية الصحية في **مركز الأمل للعلاج الطبيعي**. بكونها الأخصائية الوحيدة في الفريق، فإنها تضمن أن كل مريض يحصل على اهتمام كامل وبرنامج علاجي مصمم خصيصاً ليناسب حالته.
+                            تكرس د. سارة باسيليوس خبرتها الطويلة لتقديم أعلى مستويات الرعاية الصحية في <b class="text-[#ff9900]">مركز الأمل للعلاج الطبيعي</b> ✨. بكونها الأخصائية الوحيدة في الفريق، فإنها تضمن أن كل مريض يحصل على اهتمام كامل وبرنامج علاجي مصمم خصيصاً ليناسب حالته.
                         </p>
-                        <p class="text-lg leading-relaxed text-gray-700 bg-gray-50 p-4 rounded-lg shadow-sm">
-                            **رسالتنا:** هدفنا في مركز الأمل هو استعادة حركتك وحيويتك بأحدث التقنيات وأفضل رعاية شخصية، لتعود إلى حياتك اليومية بكامل طاقتك وبدون ألم.
-                        </p>
+                        <div class="text-lg leading-relaxed text-gray-700 bg-gray-50 p-4 rounded-lg shadow-sm flex items-center justify-end">
+                            <span class="text-xl font-bold text-[#008080] ml-3">🎯 رسالتنا:</span> هدفنا في مركز الأمل هو استعادة حركتك وحيويتك بأحدث التقنيات وأفضل رعاية شخصية، لتعود إلى حياتك اليومية بكامل طاقتك وبدون ألم.
+                        </div>
                     </div>
 
-                    <!-- Dr. Sara Photo (UPDATED URL) -->
                     <div class="lg:w-1/3 flex justify-center">
                         <img 
                             src="https://i.ibb.co/7t2pKLfH/Untitled-design-4.jpg" 
@@ -174,14 +167,12 @@
             </div>
         </section>
 
-        <!-- 4. Services Section -->
         <section id="services" class="py-16 bg-[#008080]/10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="section-title text-3xl font-extrabold text-center mb-12">خدماتنا المتميزة</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Service Card 1 -->
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-[#008080]">
                         <div class="text-[#008080] mb-4">
                              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-metal"><path d="M18 10c0 1-2 2-3 2h-1a3 3 0 0 1-3-3v-3a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1.5L9 22V7a4 4 0 0 0-4-4 2 2 0 0 0 0 4 2 2 0 0 1 0 4 2 2 0 0 0 0 4c-1.6 0-2.6.4-3.4 1"/></svg>
@@ -190,7 +181,6 @@
                         <p class="text-gray-600">تقنيات متقدمة لتحسين حركة المفاصل وتخفيف آلام العضلات والمناطق الحركية.</p>
                     </div>
 
-                    <!-- Service Card 2 -->
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-[#008080]">
                         <div class="text-[#008080] mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dumbbell"><path d="m14.4 14.4-4.8-4.8"/><path d="M18.65 8.65A2.12 2.12 0 0 0 17 8h-2l.34-.34a2.12 2.12 0 0 0-3.58-1.42l-2.4 2.4a2.12 2.12 0 0 0-.17 3.24L7 13.5v2l-.34.34a2.12 2.12 0 0 0-1.42 3.58l.7.7A2.12 2.12 0 0 0 7 21h2l.34-.34a2.12 2.12 0 0 0 3.58 1.42l2.4-2.4a2.12 2.12 0 0 0 .17-3.24L17 15.5v-2l.34-.34a2.12 2.12 0 0 0 1.42-3.58l-.7-.7Z"/></svg>
@@ -199,7 +189,6 @@
                         <p class="text-gray-600">برامج مخصصة للرياضيين لضمان عودة سريعة وآمنة للملاعب بعد الإصابات.</p>
                     </div>
                     
-                    <!-- Service Card 3 -->
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-[#008080]">
                         <div class="text-[#008080] mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bone"><path d="M17 10c.87.6 1.55 1.48 2 2.5l-3 3-3-3 2-2 1-1Z"/><path d="m20 7-1 1-2 2-2-2-3 3-3-3 2-2 1-1c.52-1.2 1.35-2.22 2.39-3.08 1.25-1.01 2.76-1.57 4.31-1.57h.03c1.55 0 3.06.56 4.31 1.57C19.74 4.78 20.57 5.8 21.1 7Z"/><path d="M12 17c-2 2-2 2-4 4s-4 1-4 1-1-4 0-6c2-2 2-2 4-4s4-1 4-1 1 4 0 6Z"/></svg>
@@ -208,7 +197,6 @@
                         <p class="text-gray-600">حلول متكاملة لآلام الظهر والرقبة والمفاصل المزمنة والحادة باستراتيجيات غير جراحية.</p>
                     </div>
 
-                    <!-- Service Card 4 -->
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-[#008080]">
                         <div class="text-[#008080] mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-circuit"><path d="M12 2a2 2 0 0 0-2 2c0 1.1.9 2 2 2s2-.9 2-2a2 2 0 0 0-2-2Z"/><path d="M18 10a2 2 0 0 0-2-2c0 1.1.9 2 2 2s2-.9 2-2a2 2 0 0 0-2-2Z"/><path d="M6 10a2 2 0 0 0-2-2c0 1.1.9 2 2 2s2-.9 2-2a2 2 0 0 0-2-2Z"/><path d="M14 16a2 2 0 0 0-2-2c0 1.1.9 2 2 2s2-.9 2-2a2 2 0 0 0-2-2Z"/><path d="M18 10c0 4.5-4 8-6 8s-6-3.5-6-8"/><path d="M12 6v6"/><path d="M16 8v2"/><path d="M8 8v2"/><path d="M14 14v-2"/><path d="M10 16v-2"/></svg>
@@ -217,7 +205,6 @@
                         <p class="text-gray-600">برامج متخصصة لتأهيل حالات الشلل النصفي والسكتات الدماغية واضطرابات الحركة.</p>
                     </div>
 
-                    <!-- Service Card 5 -->
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-[#008080]">
                         <div class="text-[#008080] mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thermometer"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>
@@ -226,7 +213,6 @@
                         <p class="text-gray-600">استخدام الأجهزة الكهربائية والكمادات الحرارية والباردة لتسكين الآلام وتحسين الدورة الدموية.</p>
                     </div>
 
-                    <!-- Service Card 6 -->
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-[#008080]">
                         <div class="text-[#008080] mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-baby"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6c0 5.5-3.5 8-4.5 9.5"/><path d="M5 6c0 5.5 3.5 8 4.5 9.5"/><circle cx="12" cy="5" r="3"/></svg>
@@ -238,13 +224,11 @@
             </div>
         </section>
 
-        <!-- 5. Photo Gallery / Advices Section -->
         <section id="gallery" class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="section-title text-3xl font-extrabold text-center mb-12">نصائح وإرشادات صحية من د. سارة</h2>
                 
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <!-- Image URLs for Advice Gallery -->
                     <img class="w-full h-full object-cover rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" src="https://i.ibb.co/v6nyjS77/DR-Sara-Basalios-Physical-Therapy.jpg" alt="نصيحة علاجية 1">
                     <img class="w-full h-full object-cover rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" src="https://i.ibb.co/wZ9gmKrK/12.jpg" alt="نصيحة علاجية 2">
                     <img class="w-full h-full object-cover rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" src="https://i.ibb.co/m5ntZV5x/11.jpg" alt="نصيحة علاجية 3">
@@ -254,7 +238,6 @@
                     <img class="w-full h-full object-cover rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" src="https://i.ibb.co/KcQwVwrk/7.jpg" alt="نصيحة علاجية 7">
                     <img class="w-full h-full object-cover rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" src="https://i.ibb.co/Kj6h18tz/6.jpg" alt="نصيحة علاجية 8">
                     <img class="w-full h-full object-cover rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" src="https://i.ibb.co/C58r8C05/5.jpg" alt="نصيحة علاجية 9">
-                    <!-- Placeholder for visual balance -->
                     <div class="flex items-center justify-center p-4 bg-[#008080] text-white rounded-lg shadow-md">
                         <span class="text-center font-bold">المزيد قريباً!</span>
                     </div>
@@ -263,7 +246,6 @@
             </div>
         </section>
 
-        <!-- 6. Why Choose Us (Value Proposition) -->
         <section class="py-16 bg-[#008080] text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-extrabold mb-10">لماذا تختار مركز الأمل للعلاج الطبيعي؟</h2>
@@ -291,67 +273,104 @@
             </div>
         </section>
 
-        <!-- 7. Testimonials Section (New) -->
         <section id="testimonials" class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl font-extrabold text-center mb-12">ماذا يقول مرضانا؟</h2>
+                <h2 class="section-title text-3xl font-extrabold text-center mb-12">📷 آراء وتقييمات العملاء (صور حية)</h2>
                 
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    
+                    <div class="review-img-container bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer border-2 border-[#ff9900]">
+                        <img 
+                            src="https://i.ibb.co/qYhxp5p0/Review1.jpg" 
+                            alt="تقييم من عميل 1" 
+                            class="rounded-xl"
+                        >
+                        <span class="absolute bottom-2 left-2 text-xs text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-full">اضغط للتكبير</span>
+                    </div>
+
+                    <div class="review-img-container bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer border-2 border-[#ff9900]">
+                        <img 
+                            src="https://i.ibb.co/Psy6ZNQL/Review12.jpg" 
+                            alt="تقييم من عميل 2" 
+                            class="rounded-xl"
+                        >
+                        <span class="absolute bottom-2 left-2 text-xs text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-full">اضغط للتكبير</span>
+                    </div>
+
+                    <div class="review-img-container bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer border-2 border-[#ff9900]">
+                        <img 
+                            src="https://i.ibb.co/Ps4LTvYz/Review13.jpg" 
+                            alt="تقييم من عميل 3" 
+                            class="rounded-xl"
+                        >
+                        <span class="absolute bottom-2 left-2 text-xs text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-full">اضغط للتكبير</span>
+                    </div>
+
+                    <div class="review-img-container bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer border-2 border-[#ff9900]">
+                        <img 
+                            src="https://i.ibb.co/8nn11hVp/Review14.jpg" 
+                            alt="تقييم من عميل 4" 
+                            class="rounded-xl"
+                        >
+                        <span class="absolute bottom-2 left-2 text-xs text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-full">اضغط للتكبير</span>
+                    </div>
+
+                    <div class="review-img-container bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer border-2 border-[#ff9900]">
+                        <img 
+                            src="https://i.ibb.co/nsGQHy4c/Review15.jpg" 
+                            alt="تقييم من عميل 5" 
+                            class="rounded-xl"
+                        >
+                        <span class="absolute bottom-2 left-2 text-xs text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-full">اضغط للتكبير</span>
+                    </div>
+
+                    <div class="review-img-container bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer border-2 border-[#ff9900]">
+                        <img 
+                            src="https://i.ibb.co/vCVpG5m7/Review16.jpg" 
+                            alt="تقييم من عميل 6" 
+                            class="rounded-xl"
+                        >
+                        <span class="absolute bottom-2 left-2 text-xs text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-full">اضغط للتكبير</span>
+                    </div>
+
+                </div>
+                <p class="text-center text-gray-500 mt-6 text-sm">شاهد تجارب عملائنا الحقيقية. اضغط على أي صورة للتكبير والقراءة بوضوح.</p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-[#008080] text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold mb-10">لماذا تختار مركز الأمل للعلاج الطبيعي؟</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
-                    <!-- Testimonial 1 -->
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#ff9900]">
-                        <p class="text-xl font-serif italic mb-4 text-gray-700">
-                            "بعد أشهر من الألم، استعدت حركتي بالكامل بفضل الرعاية الممتازة من د. سارة. مركز الأمل هو فعلاً بداية الشفاء."
-                        </p>
-                        <div class="flex items-center justify-start space-x-3 space-x-reverse mt-4">
-                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">م.أ</div>
-                            <div>
-                                <p class="font-bold text-[#008080]">محمود أحمد</p>
-                                <p class="text-sm text-gray-500">مريض إصابة رياضية</p>
-                            </div>
-                        </div>
+                    <div class="p-6 rounded-xl bg-[#006666] shadow-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check mx-auto mb-3"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <h3 class="text-xl font-bold mb-2">خبرة وكفاءة</h3>
+                        <p>إشراف مباشر من الدكتورة سارة باسيليوس بخبرة متخصصة ومتميزة.</p>
                     </div>
 
-                    <!-- Testimonial 2 -->
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#ff9900]">
-                        <p class="text-xl font-serif italic mb-4 text-gray-700">
-                            "التعامل احترافي ودافئ في نفس الوقت. الشعور بالأمان والثقة في خطة العلاج كان جزءًا كبيرًا من تعافيّ السريع."
-                        </p>
-                        <div class="flex items-center justify-start space-x-3 space-x-reverse mt-4">
-                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">س.م</div>
-                            <div>
-                                <p class="font-bold text-[#008080]">سارة محمد</p>
-                                <p class="text-sm text-gray-500">مريضة آلام مزمنة</p>
-                            </div>
-                        </div>
+                    <div class="p-6 rounded-xl bg-[#006666] shadow-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake mx-auto mb-3"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 16h6.3a2 2 0 0 1 2 2c0 1.1-.9 2-2 2h-7.6"/></svg>
+                        <h3 class="text-xl font-bold mb-2">رعاية شخصية</h3>
+                        <p>برامج علاجية مصممة لكل حالة فردية لضمان أفضل نتائج تعافي ممكنة.</p>
                     </div>
 
-                    <!-- Testimonial 3 -->
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#ff9900]">
-                        <p class="text-xl font-serif italic mb-4 text-gray-700">
-                            "مركز الأمل هو أفضل مكان ذهبت إليه للعلاج الطبيعي. الاهتمام بالتفاصيل من الدكتورة سارة لا يُضاهى."
-                        </p>
-                        <div class="flex items-center justify-start space-x-3 space-x-reverse mt-4">
-                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">ع.ح</div>
-                            <div>
-                                <p class="font-bold text-[#008080]">علي حسن</p>
-                                <p class="text-sm text-gray-500">مريض تأهيل عصبي</p>
-                            </div>
-                        </div>
+                    <div class="p-6 rounded-xl bg-[#006666] shadow-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mx-auto mb-3"><path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M19.07 14.5c.34-1.29.98-3.4 0-5.46a7.35 7.35 0 0 0-.49-1.28c-.37-.73-.82-1.42-1.34-2.06a7.35 7.35 0 0 0-3.3-2.61c-1.12-.42-2.32-.65-3.56-.65s-2.44.23-3.56.65a7.35 7.35 0 0 0-3.3 2.61c-.52.64-.97 1.33-1.34 2.06a7.35 7.35 0 0 0-.49 1.28c-.85 2.06-.21 4.17 0 5.46L12 23Z"/></svg>
+                        <h3 class="text-xl font-bold mb-2">موقع مريح</h3>
+                        <p>سهولة الوصول إلى المركز في موقع استراتيجي ومريح للجميع.</p>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- 8. FAQ Section (New) -->
         <section id="faq" class="py-16 bg-[#e6f2f2]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="section-title text-3xl font-extrabold text-center mb-12">الأسئلة الشائعة</h2>
 
                 <div class="space-y-4 max-w-4xl mx-auto">
                     
-                    <!-- FAQ Item 1 (Original) -->
                     <div class="faq-item bg-white p-5 rounded-lg shadow-md">
                         <input type="checkbox" id="faq1" class="hidden">
                         <label for="faq1" class="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#008080]">
@@ -363,7 +382,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ Item 2 (Original) -->
                     <div class="faq-item bg-white p-5 rounded-lg shadow-md">
                         <input type="checkbox" id="faq2" class="hidden">
                         <label for="faq2" class="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#008080]">
@@ -375,7 +393,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ Item 3 (Original) -->
                     <div class="faq-item bg-white p-5 rounded-lg shadow-md">
                         <input type="checkbox" id="faq3" class="hidden">
                         <label for="faq3" class="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#008080]">
@@ -387,7 +404,6 @@
                         </div>
                     </div>
                     
-                    <!-- FAQ Item 4 (Previously 5) -->
                     <div class="faq-item bg-white p-5 rounded-lg shadow-md">
                         <input type="checkbox" id="faq4" class="hidden">
                         <label for="faq4" class="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#008080]">
@@ -399,15 +415,28 @@
                         </div>
                     </div>
                     
-                    <!-- FAQ Item 5 (Previously 6) -->
                     <div class="faq-item bg-white p-5 rounded-lg shadow-md">
                         <input type="checkbox" id="faq5" class="hidden">
                         <label for="faq5" class="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#008080]">
-                            ما هي أوقات عمل المركز؟
+                            ⏰ ما هي أوقات عمل مركز الأمل؟
                             <svg class="w-6 h-6 transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </label>
                         <div class="faq-content text-gray-700 leading-relaxed">
-                            <p>المركز يعمل طوال أيام الأسبوع من الساعة 9 صباحًا حتى الساعة 6 مساءً. يرجى الاتصال بنا مسبقاً لحجز موعد لضمان توفر الدكتورة سارة.</p>
+                            <div class="p-3 bg-[#e6f2f2] rounded-lg border border-teal-300">
+                                <h4 class="font-bold text-lg text-[#006666] mb-3">📅 مواعيد العمل اليومية:</h4>
+                                <ul class="space-y-2 list-none p-0 m-0 text-gray-700">
+                                    <li><span class="text-[#008080] font-bold">✅ السبت:</span> <span class="text-[#008080] font-semibold">من 2:00 ظهرًا إلى 6:00 مساءً</span> <span class="text-gray-600">(فترة نهارية ☀️)</span></li>
+                                    <li><span class="text-red-600 font-bold">❌ الأحد:</span> <span class="text-red-600 font-bold">إجازة / لا يوجد عمل</span></li>
+                                    <li><span class="text-[#008080] font-bold">✅ الاثنين:</span> <span class="text-[#008080] font-semibold">من 6:00 مساءً إلى 10:00 مساءً</span> <span class="text-gray-600">(فترة مسائية 🌙)</span></li>
+                                    <li><span class="text-[#008080] font-bold">✅ الثلاثاء:</span> <span class="text-[#008080] font-semibold">من 2:00 ظهرًا إلى 6:00 مساءً</span> <span class="text-gray-600">(فترة نهارية ☀️)</span></li>
+                                    <li><span class="text-[#008080] font-bold">✅ الأربعاء:</span> <span class="text-[#008080] font-semibold">من 6:00 مساءً إلى 10:00 مساءً</span> <span class="text-gray-600">(فترة مسائية 🌙)</span></li>
+                                    <li><span class="text-[#008080] font-bold">✅ الخميس:</span> <span class="text-[#008080] font-semibold">من 6:00 مساءً إلى 10:00 مساءً</span> <span class="text-gray-600">(فترة مسائية 🌙)</span></li>
+                                    <li><span class="text-[#008080] font-bold">✅ الجمعة:</span> <span class="text-[#008080] font-semibold">من 6:00 مساءً إلى 10:00 مساءً</span> <span class="text-gray-600">(فترة مسائية 🌙)</span></li>
+                                </ul>
+                                <p class="mt-4 text-sm text-red-500 font-medium">
+                                    🚨 نرجو الاتصال بنا مسبقاً (01221278312) لحجز موعد لضمان توفر الدكتورة سارة.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -416,7 +445,6 @@
         </section>
 
 
-        <!-- 9. Final Call to Action Section (New) -->
         <section class="py-20 bg-[#ff9900] text-white text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold mb-4">لا تؤجل الشفاء... تواصل معنا اليوم!</h2>
@@ -428,13 +456,11 @@
         </section>
 
 
-        <!-- 10. Contact/Location Section (Renumbered from 7 to 10 for continuity) -->
         <section id="contact" class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="section-title text-3xl font-extrabold text-center mb-12">تواصل معنا واسترد عافيتك</h2>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Contact Details -->
                     <div class="bg-gray-50 p-8 rounded-xl shadow-xl text-center lg:text-right">
                         <h3 class="text-2xl font-bold text-[#008080] mb-6">بيانات الاتصال</h3>
                         
@@ -455,12 +481,11 @@
                             <div class="flex items-center lg:justify-end justify-center space-x-3 space-x-reverse">
                                 <span class="text-lg font-semibold text-gray-700">واتساب:</span>
                                 <a href="https://wa.me/201221278312" target="_blank" class="text-lg text-green-600 font-bold">01221278312</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#008080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Map Placeholder -->
                     <div class="rounded-xl overflow-hidden shadow-xl h-64 lg:h-auto">
                         <iframe 
                             src="https://maps.google.com/maps?q=%D8%A2%D8%AE%D8%B1%20%D8%B4%D8%A7%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AA%D9%84%D9%81%D8%B2%D9%8A%D9%88%D9%86%20%E2%80%93%20%D8%A8%D8%AC%D9%88%D8%A7%D8%B1%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%AF.%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D9%85%D8%B5%D8%B7%D9%81%D9%89&t=&z=15&ie=UTF8&iwloc=&output=embed" 
@@ -479,19 +504,16 @@
 
     </main>
 
-    <!-- Image Modal (Hidden by default) -->
     <div id="image-modal" class="fixed inset-0 z-[100] bg-black bg-opacity-80 hidden flex items-center justify-center p-4 transition duration-300" onclick="closeModal()">
         <div class="bg-white rounded-xl shadow-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] relative" onclick="event.stopPropagation()">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-white bg-red-600 hover:bg-red-700 rounded-full p-2 z-10 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
-            <!-- Note: max-h-[80vh] and object-contain ensure the image fits within the modal boundaries -->
             <img id="modal-image" src="" alt="" class="max-h-[80vh] w-auto mx-auto object-contain">
             <p id="modal-caption" class="p-4 text-center text-gray-700 font-semibold bg-gray-100"></p>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-sm">&copy; 2025 مركز الأمل للعلاج الطبيعي. جميع الحقوق محفوظة.</p>
@@ -499,9 +521,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle and Smooth Scrolling, and Image Modal -->
     <script>
-        // Image Modal Logic
         const modal = document.getElementById('image-modal');
         const modalImage = document.getElementById('modal-image');
         const modalCaption = document.getElementById('modal-caption');
@@ -512,32 +532,33 @@
             modalCaption.textContent = alt;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            document.body.style.overflow = 'hidden';
         }
 
         window.closeModal = function() {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = '';
+        }
+        
+        function handleImageClick() {
+            openModal(this.src, this.alt);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Toggle mobile menu visibility
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Close mobile menu when a link is clicked
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
             });
 
-            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -547,10 +568,9 @@
                 });
             });
 
-            // JavaScript to toggle FAQ content 
             document.querySelectorAll('.faq-item input').forEach(input => {
                 input.addEventListener('change', (e) => {
-                    const label = e.target.nextElementSibling; // The label
+                    const label = e.target.nextElementSibling;
                     const svg = label.querySelector('svg');
                     
                     if (e.target.checked) {
@@ -563,11 +583,12 @@
                 });
             });
 
-            // Attach click event to gallery images
             document.querySelectorAll('#gallery img').forEach(img => {
-                img.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
+                img.addEventListener('click', handleImageClick);
+            });
+
+            document.querySelectorAll('#testimonials img').forEach(img => {
+                img.addEventListener('click', handleImageClick);
             });
         });
     </script>
