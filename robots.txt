@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trialb104-spec.github.io/SaraPhysicalTherapy/sitemap.xml
